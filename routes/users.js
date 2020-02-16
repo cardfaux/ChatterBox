@@ -4,6 +4,8 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator');
 
+const fileUpload = require('../middleware/file-upload');
+
 // Bring In The User Model
 const User = require('../models/User');
 
@@ -12,6 +14,7 @@ const User = require('../models/User');
 // @access Public
 router.post(
 	'/',
+	fileUpload.single('image'),
 	[
 		check('name', 'Name Is Required')
 			.not()
