@@ -5,7 +5,10 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 
+// Bring In The Auth MiddleWare
 const auth = require('../middleware/auth');
+
+// Bring In The User Model
 const User = require('../models/User');
 
 // @route  GET api/auth
