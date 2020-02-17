@@ -6,10 +6,16 @@ const ProfileSchema = new mongoose.Schema({
 		ref: 'user'
 	},
 	bio: {
-		type: String
+		type: String,
+		required: true
+	},
+	status: {
+		type: String,
+		default: 'I am new!'
 	},
 	location: {
-		type: String
+		type: String,
+		required: true
 	},
 	githubusername: {
 		type: String
